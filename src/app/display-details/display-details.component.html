@@ -1,0 +1,24 @@
+<section class="container mx-auto p-3 text-center">
+  <button
+    class="bg-sky-500 hover:bg-sky-700 p-2 rounded"
+    (click)="onClickBtn()"
+  >
+    Display Details
+  </button>
+  <div *ngIf="isVisible">
+    <p class="text-center p-3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, odio? Quod
+      sint repellendus autem iusto amet debitis consectetur corporis velit ad,
+      sapiente atque provident tenetur. Consequatur ipsam dolorum voluptatibus
+      optio! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+      quam tenetur quod ea animi quo, qui consequatur at alias doloremque
+      pariatur porro quasi autem commodi a nisi fuga vitae vel.
+    </p>
+  </div>
+  <div *ngFor="let item of list" class="mb-2 w-24 mx-auto">
+    <p *ngIf="item >= 5; else underFive" class="bg-black text-white rounded">
+      {{ item }}
+    </p>
+    <ng-template #underFive>{{ item }}</ng-template>
+  </div>
+</section>
